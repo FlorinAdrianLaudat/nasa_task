@@ -69,19 +69,16 @@ class _NewsPageState extends State<NewsPage> {
     }
     return SingleChildScrollView(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Text(_news?.title ?? ''),
-            ),
+            padding: const EdgeInsets.all(20.0),
+            child: Text(_news?.title ?? ''),
           ),
           StringUtils.isNotNullOrEmpty(_news?.mediaType) &&
                   _news?.mediaType == 'image'
               ? Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(20.0),
                   child: CachedNetworkImage(
                     imageUrl: _news?.url ?? '',
                     errorWidget: (context, url, error) =>
